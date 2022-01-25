@@ -34,6 +34,11 @@ var {
 } = require('./../lib');
 
 var {
+  pEraser,
+  pFabric
+} = require("./../lib/utils/ephoto360");
+
+var {
   pShadow,
   pRomantic,
   pSmoke,
@@ -4912,6 +4917,54 @@ router.get('/kuis/tebakGambar', async (req, res, next) => {
 **/
 
 
+
+router.get("/ephoto/fabric", async(req, res, next) => {
+  const text1 = req.query.text;
+  const apikey = req.query.apikey;
+  if(!text1) return res.json(loghandler.nottext1)
+  if(!apikey) return res.json(loghandler.notparam)
+  if(listkey.includes(apikey)){
+  pFabric(text1)
+    .then((data) => {
+      const result = {
+        status: true,
+        code: 200,
+        creator: `${creator}`,
+        result: data.url
+      }
+      res.json(result)
+    })
+    .catch((error) => {
+      res.json(error)
+    });
+    } else {
+    	res.json(loghandler.invalidKey)
+    }
+});
+
+router.get("/ephoto/eraser", async(req, res, next) => {
+  const text1 = req.query.text;
+  const apikey = req.query.apikey;
+  if(!text1) return res.json(loghandler.nottext1)
+  if(!apikey) return res.json(loghandler.notparam)
+  if(listkey.includes(apikey)){
+  pEraser(text1)
+    .then((data) => {
+      const result = {
+        status: true,
+        code: 200,
+        creator: `${creator}`,
+        result: data.url
+      }
+      res.json(result)
+    })
+    .catch((error) => {
+      res.json(error)
+    });
+    } else {
+    	res.json(loghandler.invalidKey)
+    }
+});
 
 router.get("/photooxy/shadow", async(req, res, next) => {
   const text1 = req.query.text;

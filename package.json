@@ -4,11 +4,11 @@
   "description": "My Rest Api",
   "main": "node index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inirey/Rey-API-s.git"
+    "url": "git+https://github.com/inirey/REST-API1.git"
   },
   "keywords": [
     "simple",
@@ -16,10 +16,10 @@
     "rest",
     "api"
   ],
-  "author": "Zhirrr",
+  "author": "sekha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/inirey/Rey-API-s/issues"
+    "url": "https://github.com/inirey/REST-API1/issues"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -55,5 +55,5 @@
     "api-rey": "1.1.0",
     "zrapi": "0.0.6"
   },
-  "homepage": "https://github.com/inirey/Rey-API-s#readme"
+  "homepage": "https://github.com/inirey/REST-API1#readme"
 }

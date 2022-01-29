@@ -14,7 +14,7 @@ app.enable('trust proxy');
 app.set("json spaces",2)
 app.use(cors())
 app.use(secure)
-app.use(favicon(__path +'/views/favicon.ico'))
+//app.use(favicon(__path +'/views/favicon.ico'))
 app.use(express.static("public"))
 
 app.use('/', mainrouter);
